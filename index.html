@@ -66,21 +66,22 @@ var picData = [
 	"http://cued.xunlei.com/demos/publ/img/P_050.jpg"
 ];
 new preload(picData,{
-	handleFileLoad : function (img,obj) {
+	handleFileLoad : function (img,para) {
 		// for (var x in img) {
 		// 	console.log(x + ":" + img[x]);
 		// }
-		// console.log(obj);
+		// console.log(para);
+		console.log(para);
 		console.log("图像加载成功:" + img.src);
 		document.body.appendChild(img);
 	},
-	handleComplete : function (img,obj) {
+	handleComplete : function (img,para) {
 		console.log("所有图像加载完成");
-		console.log("图像总数量:" + obj.total);
-		console.log("图像错误数量:" + obj.errored);
-		console.log("图像加载数量:" + obj.loaded);
+		console.log("图像总数量:" + para.total);
+		console.log("图像错误数量:" + para.errored);
+		console.log("图像加载数量:" + para.loaded);
 	},
-	handleError : function (img,obj) {
+	handleError : function (img,para) {
 		console.log("图像错误:" + img.src);
 	}
 });
