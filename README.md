@@ -16,6 +16,8 @@ new preload(array,config);
 new preload(["demo.jpg"],{
 	handleFileLoad : function (img,para) {
 		console.log("图像加载成功:" + img.src);
+		console.log("图像加载进度:" + para.progress);
+		console.log("图像加载进度百分比:" + para.percent);
 		document.body.appendChild(img);
 	},
 	handleComplete : function (img,para) {
