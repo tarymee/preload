@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>preload</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+<style>
+img{float:left;height:80px;border:1px solid #ddd;padding:5px;margin:5px;}
+</style>
+</head>
+<body>
+<script src="preload.js" charset="utf-8"></script>
+<script type="text/javascript">
+var picData = [
+	"http://s17.mogucdn.com/b7/pic/120622/98smo_kqyvqwdil5bdkwsugfjeg5sckzsew_5616x3744.jpg",
+	"http://img5q.duitang.com/uploads/item/201505/27/20150527183145_BjFrN.jpeg",
+	"http://cued.xunlei.com/demos/publ/img/P_001.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_002.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_003.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_004.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_005.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_006.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_007.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_008.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_009.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_010.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_011.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_012.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_013.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_014.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_015.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_016.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_017.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_018.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_019.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_020.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_021.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_022.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_023.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_024.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_025.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_026.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_027.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_028.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_029.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_030.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_031.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_032.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_033.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_034.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_035.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_036.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_037.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_038.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_039.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_040.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_041.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_042.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_043.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_044.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_045.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_046.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_047.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_048.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_049.jpg",
+	"http://cued.xunlei.com/demos/publ/img/P_050.jpg"
+];
+new preload(picData,{
+	handleFileLoad : function (img,obj) {
+		// for (var x in img) {
+		// 	console.log(x + ":" + img[x]);
+		// }
+		// console.log(obj);
+		console.log("图像加载成功:" + img.src);
+		document.body.appendChild(img);
+	},
+	handleComplete : function (img,obj) {
+		console.log("所有图像加载完成");
+		console.log("图像总数量:" + obj.total);
+		console.log("图像错误数量:" + obj.errored);
+		console.log("图像加载数量:" + obj.loaded);
+	},
+	handleError : function (img,obj) {
+		console.log("图像错误:" + img.src);
+	}
+});
+</script>
+</body>
+</html>
