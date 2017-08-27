@@ -14,21 +14,21 @@ new Preload(array, config)
 + config：配置对象【config可以为空 为空的话使用默认值】
 
 ```javascript
-new Preload(["demo.jpg"], {
+new Preload(['demo.jpg'], {
     handleFileLoad: function(img, para) {
-        console.log("图像加载成功:" + img.src)
-        console.log("图像加载进度:" + para.progress)
-        console.log("图像加载进度百分比:" + para.percent)
+        console.log('图像加载成功:' + img.src)
+        console.log('图像加载进度:' + para.progress)
+        console.log('图像加载进度百分比:' + para.percent)
         document.body.appendChild(img)
     },
     handleComplete: function(img, para) {
-        console.log("所有图像加载完成")
-        console.log("图像总数量:" + para.total)
-        console.log("图像错误数量:" + para.errored)
-        console.log("图像加载数量:" + para.loaded)
+        console.log('所有图像加载完成')
+        console.log('图像总数量:' + para.total)
+        console.log('图像错误数量:' + para.errored)
+        console.log('图像加载数量:' + para.loaded)
     },
     handleError: function(img, para) {
-        console.log("图像错误:" + img.src)
+        console.log('图像错误:' + img.src)
     }
 })
 ```
